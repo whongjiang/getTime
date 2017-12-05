@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body{
+      font-size: 30px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+  function Time(){
+    var myDate = new Date();
+    var myYear = myDate.getFullYear();
+    console.log(myYear);
+    var myMonth = myDate.getMonth();
+    console.log(myMonth+1);
+    var date = myDate.getDate();
+    console.log(date);
+    var Week = myDate.getDay();
+    console.log(Week);
+    var myHour = myDate.getHours();
+    console.log(myHour);
+    var myMin = myDate.getMinutes();
+    var mySec = myDate.getSeconds();
+    console.log(myMin);
+    console.log(mySec);
+
+    switch (Week){
+      case 0:Week="日";break;
+      case 1:Week="一";break;
+      case 2:Week="二";break;
+      case 3:Week="三";break;
+      case 4:Week="四";break;
+      case 5:Week="五";break;
+      case 6:Week="六";break;
+    }
+    var str=" ";
+    str+=myYear+"年"+(myMonth+1)+"月"+date+"日"+" "+"星期"+Week+" "+myHour+"时"+":"+myMin+"分"+":"+mySec+"秒";
+    document.body.innerHTML=str;
+  }
+  Time();
+  setInterval(Time,1000);          //setInterval是一个定时器，设定函数的执行时间为1000毫秒
+</script>
+</html>
